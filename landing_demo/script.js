@@ -20,3 +20,4 @@ const navsearch = document.getElementById("nav_search");
 navsearch.addEventListener("click",(e)=>{
     navsearch.classList.toggle("open");
 });
+
