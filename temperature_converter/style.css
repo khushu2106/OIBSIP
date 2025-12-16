@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ffffff;
+    --text-dark: #171717;
+    --text-light: #737373;
+    --extra-light: #f4f6f5;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --header-font: "Roboto Slab", serif;
+}
+
+.box {
+    background-color: var(--primary-color);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 10%;
+    line-height: 3.5;
+    gap: 10px;
+}
+
+.heading {
+    font-size: 2rem;
+    font-family: var(--header-font);
+    color: var(--text-dark);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--text-light);
+    border-radius: 5px;
+}
+
+.btn {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+button {
+    width: 40%;
+    height: 40%;
+    margin: 10px 0;
+    padding: 5px;
+    font-size: 10px;
+    border: 1px solid var(--text-light);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+button:hover{
+    background-color: var(--text-dark);
+    color: var(--white);
+    font-size: 20px;
+}
+
+#unitSelect {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--text-light);
+    border-radius: 10px;
+}
