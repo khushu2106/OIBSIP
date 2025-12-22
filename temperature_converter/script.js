@@ -1,26 +1,23 @@
 function convertTemperature(){  
-    const input = document.getElementById("temperatureInput").value;
+    const input = parseFloat(document.getElementById("temperatureInput").value);
     const unit = document.getElementById("unitSelect").value;
-    let result = 0;
-    let resultUnit = "";
-
-    if (unit === "celsius") {
-        result = (input * 9/5) + 32;
-        resultUnit = "Fahrenheit";
-        result = (input - 32) * 5/9;
-        resultUnit = "Celsius";
-    } else if (unit === "fahrenheit") {
-        result = (input - 32) * 5/9;
-        resultUnit = "Celsius";
-        result = (input - 32) * 5/9 + 273.15;
-        resultUnit = "Kelvin";
-    } else if (unit === "kelvin") {
-        result = input - 273.15;
-        resultUnit = "Celsius";
-        result = (input - 273.15) * 9/5 + 32;
-        resultUnit = "Fahrenheit";
+    if(isNaN(input)){
+        alert('please enter any number')
+        return;
     }
+    let result = '';
 
-    document.querySelector(".result").innerHTML =
-      `<p>Converted Temperature: ${result.toFixed(2)} ${resultUnit}</p>`;
+    if(unit === "Kelvin"){
+        result = `Celcius : ${(input -273.15).toFixed(2)} S <br>
+        Fahrenheit : ${((input -273.15)*9/5+32).toFixed(2)} F`;
+    }
+    else if(unit === "Celsius"){
+        result = `Fahrenheit : ${(input *9/5 + 32).toFixed(2)} F <br>
+        Kelvin :${(input + 273.15).toFixed(2)} K`;
+    }
+    else if(unit === 'Fahrenheit'){
+        result = `Celsius : ${((input - 32)*5/9).toFixed(2)} C <br>
+        Kelvin : ${((input-32*5/9)+273.15).toFixed(2)} K`;
+    }
+    document.querySelector(".result").innerHTML = result;
 }

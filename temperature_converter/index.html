@@ -13,13 +13,14 @@
 <body>
     <div class="box">
         <div class="heading">Temperature Converter</div>
-        <div class="input"><input type="number" id="temperatureInput" placeholder="Enter degrees"></div>
+        <div class="input"><input type="text" id="temperatureInput" placeholder="Enter degrees"></div>
         <div class="dropdown"><select id="unitSelect">
-                <option value="celsius">Celsius</option>
-                <option value="fahrenheit">Fahrenheit</option>
-                <option value="kelvin">Kelvin</option>
+                <option value="Fahrenheit">Fahrenheit</option>
+                <option value="Celsius">Celsius</option>
+                <option value="Kelvin">Kelvin</option>
             </select></div>
-        <div class="btn"><button onclick="convertTemperature()" value="Convert"></button></div>
+        <div class="btn"><button onclick="convertTemperature()">Convert</button>
+        </div>
         <div class="result"></div>
     </div>
     <script src="script.js"></script>
