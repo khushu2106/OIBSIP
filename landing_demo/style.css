@@ -83,6 +83,7 @@ body {
   font-family: "DM Sans", sans-serif;
 }
 
+/*--------------------------------------- Navigation ----------------------------------*/
 nav {
   position: fixed;
   isolation: isolate;
@@ -145,6 +146,7 @@ nav {
   display: none;
 }
 
+/*---------------------------------- Header Section -------------------------------------------*/
 header {
   margin-top: 5rem;
   padding-inline: 1rem;
@@ -218,6 +220,7 @@ header::before {
   background-color: var(--primary-color);
 }
 
+/*--------------------------------------- popular destination ------------------------------------*/
 .destination__container :is(.section__header, .section__description) {
   text-align: left;
   margin-inline-start: unset;
@@ -267,6 +270,7 @@ header::before {
   background-color: var(--primary-color-dark);
 }
 
+/*------------------------------------ Journey Section --------------------------------------*/
 .journey__grid {
   margin-top: 2rem;
   display: grid;
@@ -338,6 +342,7 @@ header::before {
   color: var(--extra-light);
 }
 
+/*------------------------------------ Showcase Section --------------------------------------*/
 .showcase__container {
   display: grid;
   gap: 2rem;
@@ -375,6 +380,7 @@ header::before {
   border-radius: 5px;
 }
 
+/*---------------------------------------- Banner Section ------------------------------------------*/
 .banner__container {
   display: grid;
   gap: 2rem;
@@ -398,6 +404,7 @@ header::before {
   color: var(--text-light);
 }
 
+/*---------------------------------------- Discover Section ------------------------------------------*/
 .discover__grid {
   margin-top: 4rem;
   display: grid;
@@ -447,6 +454,7 @@ header::before {
   min-width: 375px;
 }
 
+/*---------------------------------------- Client Section ------------------------------------------*/
 .client__card {
   padding: 5px;
   background-color: var(--extra-light);
@@ -507,6 +515,7 @@ header::before {
   color: var(--extra-light);
 }
 
+/*--------------------------------------------- Footer Section -------------------------------------*/
 footer {
   background-color: var(--extra-light);
 }
@@ -598,6 +607,7 @@ footer {
   text-align: center;
 }
 
+/* ------------------------ Media Queries ------------------------ */
 @media (width > 540px) {
   .destination__grid {
     grid-template-columns: repeat(2, 1fr);
