@@ -138,18 +138,18 @@ const aboutTabs = document.querySelectorAll(".tab");
 
 const aboutContent = document.querySelectorAll(".tab-content")
 
-// document.addEventListener('DOMContentLoaded' ,()=>{
-//     if(aboutTabs){
-//         aboutTabs[0].click
-//     }
-// });
+document.addEventListener('DOMContentLoaded', () => {
+    if (aboutTabs) {
+        aboutTabs[0].click
+    }
+});
 
 aboutTabs.forEach((tab) => {
     tab.addEventListener('click', (e) => {
         e.preventDefault();
 
         aboutTabs.forEach((a) => {
-            a, classList.remove("active")
+            a.classList.remove("active")
         });
         tab.classList.add("active");
 
@@ -177,11 +177,84 @@ aboutTabs.forEach((tab) => {
             }
             ];
 
-            const experienceContent = experienceList.map((ele)=>{
+            const experienceContent = experienceList.map((ele) => {
                 return `
-                
-                `
-            })
+                    <div class="experience-box" key=${ele?.id}>
+                            <h4>${ele?.data}</h4>
+                            <h3>${ele?.position}</h3>
+                            <div class="company-name">
+                                <span></span>
+                                <p>${ele?.company}</p>
+                            </div>
+                            <p>${ele?.details}</p>
+                    </div>
+               `;
+            }).join("");
+            if (experience)
+                experience.innerHTML = experienceContent;
+        }
+        else if (activeTab === 'education') {
+            const education = document.querySelector(".eduction-list");
+            const educationList = [{
+                id: 1,
+                data: "octomber 2025",
+                degree: 'Bachelor of Computer Applications',
+                details: "I'm currently pursuing BCA from the University of Delhi."
+            },
+            {
+                id: 2,
+                data: "octomber 2025",
+                degree: 'Bachelor of Computer Applications',
+                details: "I'm currently pursuing BCA from the University of Delhi."
+            }
+            ];
+
+            const educationContent = educationList.map((ele) => {
+                return `
+                    <div class="education-box" key=${ele?.id}>
+                            <h4>${ele?.data}</h4>
+                            <h3>${ele?.degree}</h3>
+                            <p>${ele?.details}</p>
+                    </div>
+               `;
+            }).join("");
+            if (education)
+                education.innerHTML = educationContent;
+        }
+        else if (activeTab === 'skills') {
+            const skills = document.querySelector(".skills-list");
+            const skillsList = [{
+                id: 1,
+                name: "HTML",
+                level: "Advanced"
+            },
+            {
+                id: 2,
+                name: "CSS",
+                level: "Advanced"
+            },
+            {
+                id: 3,
+                name: "JavaScript",
+                level: "Intermediate"
+            },
+            {
+                id: 4,
+                name: "React",
+                level: "Intermediate"
+            }
+            ];
+
+            const skillsContent = skillsList.map((ele) => {
+                return `
+                    <div class="skill-box" key=${ele?.id}>
+                            <h4>${ele?.name}</h4>
+                            <p>${ele?.level}</p>
+                    </div>
+               `;
+            }).join("");
+            if (skills)
+                skills.innerHTML = skillsContent;
         }
     });
 });

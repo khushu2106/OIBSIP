@@ -588,3 +588,146 @@ nav a {
     cursor: pointer;
     color: var(--green);
 }
+
+.tab.active{
+    border: 2px solid var(--green)!important;
+    color: var(--green);
+}
+
+.tab-content.active{
+    display: inline-flex;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+aside h2 span{
+    color: var(--green);
+}
+
+aside h2{
+    font-size: 2rem;
+}
+
+aside h2 span{
+    color: var(--green);
+}
+
+.experience-list , .education-list{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 2rem;
+    overflow-y: auto;
+    max-height: 300px;
+    padding: 1rem;
+}
+
+.experience-list::-webkit-scrollbar,
+.education-list::-webkit-scrollbar{
+    width: 5px;
+}
+
+.experience-list::-webkit-scrollbar-thumb,
+.education-list::-webkit-scrollbar-thumb{
+    background: var(--green);
+    border-radius: 10px;
+}
+
+.experience-box{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    border: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    background: var(--second-color);
+    transition: all linear 0.3s;
+}
+
+.experience-box:hover{
+    border-color: var(--green);
+    box-shadow: 5px 5px 5px var(--green)
+    -5px 5px 5px var(--green),
+    5px -5px 5px var(--green),
+    -5px -5px 5px var(--green);
+}
+
+.experience-box h4{
+    font-size: 1.4rem;
+}
+
+.experience-box h3{
+    font-size: 1.3rem;
+    color: var(--green);
+}
+
+.experience-box p{
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.company-name{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.company-name span{
+    border: 6px solid var(--green);
+    border-radius: 50%;
+}
+
+.company-name p{
+    font-size: 1rem;
+}
+
+@media screen and (width >=768) {
+    #about.content.active{
+        grid-template-columns: repeat(7,1fr);
+        gap: 3rem;
+    }
+
+    .sidebar{
+        grid-column: span 3;
+    }
+
+    .sidebar .tabs{
+        gap: 1.5rem;
+    }
+
+    .tab-content.active{
+        max-width: 100%;
+        margin: 0;
+        grid-column: span 4;
+    }
+
+    aside p{
+        font-size: 1.3rem;
+    }
+
+    .experience-box h3{
+        font-size: 1.5rem;
+    }
+
+    .company-name p{
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (width >=1024px) {
+    #about.content.active{
+        gap: 5rem;
+    }
+
+    .experience-box h3{
+        font-size: 1.8rem;
+    }
+}
