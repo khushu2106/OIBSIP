@@ -128,7 +128,7 @@ const aboutContent = document.querySelectorAll(".tab-content")
 
 document.addEventListener('DOMContentLoaded', () => {
     if (aboutTabs) {
-        aboutTabs[0].click
+        aboutTabs[0].click();
     }
 });
 
@@ -236,109 +236,3 @@ aboutTabs.forEach((tab) => {
         }
     });
 });
-
-const projectList = [
-    {
-        id: 1,
-        number: "01",
-        title: "Landing page ",
-        description: "Landing page for learning purpose",
-        techStack: ["HTML", "CSS", "JavaScript"],
-        image: "Portfolio/assets/image.png",
-        liveLink: "#",
-        githubLink: "#",
-    },
-    {
-        id: 2,
-        number: "02",
-        title: "TaskManager",
-        description: "Task manager for learning purpose",
-        techStack: ["HTML", "CSS", "JavaScript"],
-        image: "image.png",
-        liveLink: "#",
-        githubLink: "https://github.com/khushu2106/Task-Manager",
-    }
-]
-
-const projects = document.querySelector(".projects");
-
-let currentIndex = 0;
-
-const renderProject = (index) => {
-    const projectContent = projectList[index];
-    const previousDisabled = currentIndex === 0;
-    const nextDisabled = currentIndex === projectList - 1;
-    projects.innerHTML = `<div class = "project-info">
-    <h3>${projectContent?.number}</h3>
-    <h4>${projectContent?.title}</h4>
-    <P> ${projectContent?.description}</p>
-    <div class = "tech-stack">
-    ${projectContent?.techStack?.map((tech, i) => {
-        return `
-            <span key=${i}>${tech}</span>
-            `;
-    }).join(" , ")}
-    <div>
-    <hr/>
-    <div class = "links">
-      <a href="${projectContent?.githubLink}">
-        <i class = "ph ph-arrow-right"></i>
-        <i class = "ph ph-github-logo"></i>
-    </div>
-     <div class="carousel">
-             <img src=${projectContent?.image} alt=${projectContent?.title}>
-            <div class="arrows">
-                <a href="#" id="previous"
-                    class=${previousDisabled ? "disabled-btn" : ""}><i class="ph ph-caret-left"></i></a>
-                <a href="#" id="next" class=${nextDisabled ? "disabled-btn" : ""}><i class="ph ph-caret-right"}></i></a>
-            </div>
-        </div>
-    `;
-    document.getElementById('previous').addEventListener("click", () => {
-        e.preventDefault();
-        if (currentIndex > projectList.length - 1) {
-            currentIndex++;
-            renderProject(currentIndex);
-        }
-    });
-};
-
-renderProject(currentIndex);
-
-const media = document.querySelector(".contact-media");
-
-const contactList = [
-    {
-        id: 1,
-        icon: "ph ph-phone-call",
-        name: 'Phone',
-        value: "+91 9876543210",
-        href: "tel:+919876543210",
-    },
-    {
-        id: 2,
-        icon: "ph ph-envelope",
-        name: 'Email',
-        value: "guptakhushu21062106@gmail.com",
-        href: "mailto:guptakhushu21062106@gmail.com",
-    },
-    {
-        id: 3,
-        icon: "ph ph-map-pin",
-        name: 'Location',
-        value: "Ahemdabad, India",
-        href: "https://maps.google.com"
-    }
-];
-
-const contactContent = contactList.map((ele) => {
-    return `<div class="contact-item" data-id=${ele?.id}>
-                <i class="${ele.icon}" id="icon"></i>
-                    <h4>${ele.name}</h4>
-                    <a href="${ele.href}">${ele.value}</a>
-                </div>
-            </div>`;
-}).join("");
-
-if (media)
-    media.innerHTML = contactContent;
